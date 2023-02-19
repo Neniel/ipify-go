@@ -19,7 +19,16 @@ func TestGetGeo(t *testing.T) {
 		want  *model.Geo
 		want1 *model.GeoError
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Make request with no API key should fail",
+			args: args{
+				apiKey:    "",
+				entities:  nil,
+				optParams: nil,
+			},
+			want:  nil,
+			want1: model.NewGeoError(403, "Access restricted. Check credits balance or enter the correct API key."),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
