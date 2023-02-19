@@ -3,6 +3,8 @@ package geo
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 	"net/http"
 	"strings"
 
@@ -23,6 +25,13 @@ func GetGeo(apiKey string, entities []string, optParams *model.OptParams) (*mode
 	url := buildUrl(apiKey, entities, optParams)
 
 	response, err := http.Get(url)
+	defer func(body io.ReadCloser) {
+		err := body.Close()
+		if err != nil {
+			log.Printf("Error when closing body: %v\n", err.Error())
+		}
+	}(response.Body)
+
 	if err != nil {
 		return nil, model.NewGeoError(-1, err.Error())
 	}

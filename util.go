@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 
 	"github.com/Neniel/ipify-go/model"
@@ -17,6 +18,13 @@ const (
 
 func getIPAsString(url string) (string, error) {
 	response, err := http.Get(url)
+	defer func(body io.ReadCloser) {
+		err := body.Close()
+		if err != nil {
+			log.Printf("Error when closing body: %v\n", err.Error())
+		}
+	}(response.Body)
+
 	if err != nil {
 		return "", err
 	}
