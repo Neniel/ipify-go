@@ -1,8 +1,10 @@
 package ipify
 
+import "github.com/Neniel/ipify-go/model"
+
 const baseUrlV6orV4 = "https://api64.ipify.org"
 
-func GetIP64() (*IP, error) {
+func GetIP64() (*model.IP, error) {
 	return getIP(baseUrlV6orV4)
 }
 

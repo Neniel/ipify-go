@@ -1,4 +1,4 @@
-package ipify
+package model
 
 import (
 	"reflect"

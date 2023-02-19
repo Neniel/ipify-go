@@ -3,6 +3,7 @@ package ipify
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/Neniel/ipify-go/model"
 	"io"
 	"net/http"
 )
@@ -51,13 +52,13 @@ func getIPAsJSONP(url string, callback ...string) (string, error) {
 	return getIPAsString(url)
 }
 
-func getIP(url string) (*IP, error) {
+func getIP(url string) (*model.IP, error) {
 	ipString, err := getIPAsJSON(url)
 	if err != nil {
 		return nil, err
 	}
 
-	ip := NewIP()
+	ip := model.NewIP()
 	err = json.Unmarshal([]byte(ipString), ip)
 	if err != nil {
 		return nil, err
