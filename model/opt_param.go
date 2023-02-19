@@ -24,6 +24,15 @@ var optParamsByPriority = []string{ParamEmail, ParamDomain, ParamIpAddress}
 
 type OptParams map[string]interface{}
 
+func NewOptParams() *OptParams {
+	return &OptParams{}
+}
+
+func (p OptParams) Add(key string, value interface{}) *OptParams {
+	p[key] = value
+	return &p
+}
+
 func (p OptParams) GetHighPriorityParam() *OptParam {
 	for _, k := range optParamsByPriority {
 		if v, ok := p[k]; ok {

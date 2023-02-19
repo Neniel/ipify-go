@@ -51,16 +51,16 @@ func buildUrl(apiKey string, entities []string, optParams *model.OptParams) stri
 	}
 	strEntities := strings.Join(entities, ",")
 
-	url := fmt.Sprintf(baseUrl, ParamApiKey, apiKey, strEntities)
+	url := fmt.Sprintf(baseUrl, strEntities, ParamApiKey, apiKey)
 
 	if optParams != nil {
 		param := optParams.GetHighPriorityParam()
 		if param != nil {
-			url = fmt.Sprintf(url+"%s=%s", param.Key, param.Value)
+			url = fmt.Sprintf(url+"&%s=%s", param.Key, param.Value)
 		}
 
 		if esc := optParams.GetParam(model.ParamEscapedUnicode); esc != nil {
-			url = fmt.Sprintf(url+"%s=%s", esc.Key, esc.Value)
+			url = fmt.Sprintf(url+"&%s=%s", esc.Key, esc.Value)
 		}
 	}
 
