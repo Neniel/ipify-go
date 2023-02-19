@@ -3,9 +3,10 @@ package geo
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Neniel/ipify-go/model"
 	"net/http"
 	"strings"
+
+	"github.com/Neniel/ipify-go/model"
 )
 
 const (

@@ -1,8 +1,9 @@
 package ipify
 
 import (
-	"github.com/Neniel/ipify-go/model"
 	"testing"
+
+	"github.com/Neniel/ipify-go/model"
 )
 
 func Test_getIP(t *testing.T) {

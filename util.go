@@ -3,9 +3,10 @@ package ipify
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Neniel/ipify-go/model"
 	"io"
 	"net/http"
+
+	"github.com/Neniel/ipify-go/model"
 )
 
 const (

@@ -1,9 +1,10 @@
 package geo
 
 import (
-	"github.com/Neniel/ipify-go/model"
 	"reflect"
 	"testing"
+
+	"github.com/Neniel/ipify-go/model"
 )
 
 func TestGetGeo(t *testing.T) {
