@@ -3,7 +3,7 @@ package model
 type GeoError struct {
 	Code     int    `json:"code"`
 	Messages string `json:"messages"`
-	Another  string `json:"another"`
+	//Another  string `json:"another"`
 }
 
 func NewDefaultGeoError() *GeoError {
