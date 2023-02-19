@@ -21,6 +21,21 @@ const (
 	ParamApiKey = "apiKey"
 )
 
+// GetGeo allows you to locate and identify website visitors by IP address.
+//
+// # Required parameters
+//
+//   - apiKey: The API key you need to use for using this API
+//
+// # Optional parameters
+//
+//   - entities: a slice of entities you would like to query: possible values are [EntityCountry], [EntityCity] and [EntityVpn]
+//   - optParams: when provided, it will try to put the one with the highest priority on the request URL
+//
+// # Return values
+//
+//   - If success: It will return a pointer to [model.Geo] and nil for [model.GeoError].
+//   - If error:  It will return nil for [model.Geo] and a pointer to [model.GeoError].
 func GetGeo(apiKey string, entities []string, optParams *model.OptParams) (*model.Geo, *model.GeoError) {
 	url := buildUrl(apiKey, entities, optParams)
 
