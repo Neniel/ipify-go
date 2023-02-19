@@ -33,7 +33,7 @@ func Test_getIP(t *testing.T) {
 		{
 			name: "Should work for v6 or v4",
 			args: args{
-				url: baseURL64,
+				url: baseUrlV6orV4,
 			},
 			wantErr: false,
 		},
@@ -76,7 +76,7 @@ func Test_getIPAsJSON(t *testing.T) {
 		{
 			name: "Should work for v6 or v4",
 			args: args{
-				url: baseURL64,
+				url: baseUrlV6orV4,
 			},
 			wantErr: false,
 		},
@@ -113,7 +113,7 @@ func Test_getIPAsJSONP(t *testing.T) {
 		{
 			name: "Should fail for v6 or v4 because of multiple callbacks",
 			args: args{
-				url:      baseURL64,
+				url:      baseUrlV6orV4,
 				callback: []string{"callbackFunction1", "callbackFunction2"},
 			},
 			wantErr: true,
@@ -128,7 +128,7 @@ func Test_getIPAsJSONP(t *testing.T) {
 		{
 			name: "Should work for v6 or v4 without callback",
 			args: args{
-				url: baseURL64,
+				url: baseUrlV6orV4,
 			},
 			wantErr: false,
 		},
@@ -141,9 +141,9 @@ func Test_getIPAsJSONP(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "Should worl for v6 or v4 with callback",
+			name: "Should work for v6 or v4 with callback",
 			args: args{
-				url:      baseURL64,
+				url:      baseUrlV6orV4,
 				callback: []string{"callbackFunction1"},
 			},
 			wantErr: false,
@@ -187,7 +187,7 @@ func Test_getIPAsString(t *testing.T) {
 		{
 			name: "Should work for v6 or v4",
 			args: args{
-				url: baseURL64,
+				url: baseUrlV6orV4,
 			},
 			wantErr: false,
 		},
