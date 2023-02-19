@@ -1,3 +1,11 @@
+// Package ipify implements a simple library for using the services provided by ipify.
+//
+// Using ipify is ridiculously simple. You have three options. You can get your public IP directly (in plain text),
+// you can get your public IP in JSON format, or you can get your public IP information in JSONP format (useful for Javascript developers).
+//
+// Visit [ipify official website] for more information.
+//
+// [ipify official website]: https://www.ipify.org/
 package ipify
 
 import (

@@ -1,3 +1,9 @@
+// Package geo uses ipify IP Geolocation API in order to allow you to locate and identify website visitors by IP address.
+// IP location helps prevent fraud, customize web experiences, and maintain regulatory compliance.
+//
+// Visit [ipify IP Geolocation API official website] for more information.
+//
+// [ipify IP Geolocation API official website]: https://geo.ipify.org/
 package geo
 
 import (
@@ -25,7 +31,7 @@ const (
 //
 // # Required parameters
 //
-//   - apiKey: Required. Get your personal API KEY on [My subscriptions]
+//   - apiKey: Required. Get your personal API KEY on the official subscriptions page at https://geo.ipify.org/subscriptions
 //
 // # Optional parameters
 //
@@ -40,8 +46,6 @@ const (
 //
 //   - If success: It will return a pointer to [model.Geo] and nil for [model.GeoError].
 //   - If error:  It will return nil for [model.Geo] and a pointer to [model.GeoError].
-//
-// [My subscriptions]: https://geo.ipify.org/subscriptions
 func GetGeo(apiKey string, entities []string, optParams *model.OptParams) (*model.Geo, *model.GeoError) {
 	url := buildUrl(apiKey, entities, optParams)
 
