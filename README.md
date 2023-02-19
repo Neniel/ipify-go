@@ -25,3 +25,27 @@ callback({"ip": "127.0.0.1"})
 ```jsonp
 my_function({"ip": "127.0.0.1"})
 ```
+
+
+## How to get started
+
+Please find below a quick example on how to get started with this library:
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Neniel/ipify-go"
+)
+
+func main() {
+	ip, err := ipify.GetIPv4()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+	fmt.Println(ip)
+}
+```
