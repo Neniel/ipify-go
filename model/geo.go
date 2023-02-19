@@ -11,9 +11,9 @@ type Geo struct {
 
 func NewGeo() *Geo {
 	return &Geo{
-		Location: NewLocation(),
-		Domains:  make([]string, 0),
-		As:       NewAs(),
-		Proxy:    NewProxy(),
+		//Location: NewLocation(),
+		//Domains:  make([]string, 0),
+		//As:       NewAs(),
+		//Proxy:    NewProxy(),
 	}
 }
