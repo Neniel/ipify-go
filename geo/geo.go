@@ -25,17 +25,23 @@ const (
 //
 // # Required parameters
 //
-//   - apiKey: The API key you need to use for using this API
+//   - apiKey: Required. Get your personal API KEY on [My subscriptions]
 //
 // # Optional parameters
 //
 //   - entities: a slice of entities you would like to query: possible values are [EntityCountry], [EntityCity] and [EntityVpn]
-//   - optParams: when provided, it will try to put the one with the highest priority on the request URL
+//   - optParams: when provided, it will try to put the one with the highest priority on the request URL. For example:
+//   - ipAddress: Optional. IPv4 or IPv6 to search location by. If the parameter is not specified, then it defaults to client request's public IP address.
+//   - domain: Optional. Domain name to search location by.If the parameter is not specified, then 'ipAddress' will be used.
+//   - email: Optional. Email address or domain name to search location by it's MX servers. If the parameter is not specified, then 'ipAddress' will be used.
+//   - escapedUnicode: Optional. 1 - allows you to receive unescaped Unicode characters in the API response (default is to escape as \uXXXX). Acceptable values: 0 | 1. Default: 0
 //
 // # Return values
 //
 //   - If success: It will return a pointer to [model.Geo] and nil for [model.GeoError].
 //   - If error:  It will return nil for [model.Geo] and a pointer to [model.GeoError].
+//
+// [My subscriptions]: https://geo.ipify.org/subscriptions
 func GetGeo(apiKey string, entities []string, optParams *model.OptParams) (*model.Geo, *model.GeoError) {
 	url := buildUrl(apiKey, entities, optParams)
 
